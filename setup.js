@@ -17,6 +17,7 @@ async function launchPuppeteer(config) {
 function launchStaticServer(config) {
   const server = http.createServer((request, response) => handler(request, response, {
     public: config.dir,
+    cleanUrls: false,
   }));
 
   // Expose port to teardown
